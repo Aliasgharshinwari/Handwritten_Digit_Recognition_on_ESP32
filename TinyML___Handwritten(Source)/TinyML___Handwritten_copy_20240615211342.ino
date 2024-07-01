@@ -1,5 +1,4 @@
-/**
- * Run a TensorFlow model to predict the IRIS dataset
+/*
  * For a complete guide, visit
  * https://eloquentarduino.com/tensorflow-lite-esp32
  */
@@ -26,17 +25,6 @@ void setup() {
     Serial.begin(115200);
     delay(3000);
     Serial.println("__TENSORFLOW MNISTModel");
-    
-    // configure input/output
-    // (not mandatory if you generated the .h model
-    // using the everywhereml Python package)
-    //tf.setNumInputs(784);
-    //tf.setNumOutputs(10);
-    // add required ops
-    // (not mandatory if you generated the .h model
-    // using the everywhereml Python package)
-    //tf.resolver.AddFullyConnected();
-    //tf.resolver.AddSoftmax();
  
     while (!tf.begin(MNISTModel).isOk())
         Serial.println(tf.exception.toString());
